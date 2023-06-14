@@ -122,15 +122,15 @@ padding-left:10px;
         /* Fin botones del menu izquiedo */
 
 /* FIN ESTILOS DE BARRA DE NAVEGACIÓN */
-/* codigo */
+
+
+
 main {
     grid-row: 2; /* Colocar en la segunda fila */
     grid-column: 2; /* Colocar en la segunda columna */
     flex-direction: column;
     padding: 30px;
 }
-/* fin codigo */
-
 
 main section{
     padding: 3px;
@@ -149,15 +149,31 @@ main section{
 .art-offer {
     padding: 30px;
     text-align: center;
+    display: flex;
+    justify-content: space-between; /* columna iguala el alto */
+    align-items: center;
+    flex-direction: column;
+}
+
+.art-offer header>p {
+    position: absolute;
+    text-align: right;
 }
 
 .art-offer>img {
     width: 70%;
 }
 /* PLANTILLA DE PRODUCTOS */
-.card{
-    background-color: brown;
-}
+    /* tarjetas */
+    .card{
+        padding: 10px;
+        background-color: brown;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: translateY(-50px);
+    }
 
 /* CONTROL DE STOCK */
 .stock-control{
