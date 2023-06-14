@@ -53,13 +53,16 @@ button {
 
 /*ESTLO DEL BODY */
 body {
-    display: flex;
-    flex-wrap:wrap;
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 250px auto; /*tamano de la primer y segunda columna */
     background-color: var(--color-background);
   }
 
 /* ESTILOS DE CABECERA PRINCIPAL*/
 .main-header{
+    grid-row: 1; /* Colocar en la primera fila */
+    grid-column: 1 / span 2; /* Ocupar ambas columnas */
     /*background-color: blue;*/
     padding: 1.1%;
     margin-bottom: 2px;
@@ -94,7 +97,8 @@ body {
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu{
-    width: 220px;
+    grid-row: 2; /* Colocar en la segunda fila */
+    grid-column: 1; /* Colocar en la primera columna */
     padding: 5px 0px 5px 5px;
     color: var(--color-background);
     background-color: var(--color-primario);   
@@ -140,6 +144,8 @@ padding-left:10px;
 
 
 main {
+    grid-row: 2; /* Colocar en la segunda fila */
+    grid-column: 2; /* Colocar en la segunda columna */
     flex-direction: column;
     padding: 30px;
 }
@@ -237,6 +243,8 @@ main section{
 /* FOOTER */
 .main-footer{
 
+    grid-row: 3; /* Colocar en la tercera fila */
+    grid-column: 1 / span 2; /* Ocupar ambas columnas */
 
     background-color: violet;
 }
