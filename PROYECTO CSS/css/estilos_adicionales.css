@@ -15,6 +15,13 @@
     --color-texto: #322f3c;
 }
 
+::selection {
+    background-color: var(--color-secundario);
+    color:white;
+}
+
+
+
 h2, h3, a {
     font-family: 'Montserrat', sans-serif;
 }
@@ -22,6 +29,16 @@ h2, h3, a {
 h2 {
     font-size: 1.6rem;
     font-weight: normal;
+}
+
+h2::after {
+    /* separador */
+    content:"";
+    background-color: var(--color-secundario);
+    display: block; /* en la linea pero baja una */
+    width:100px;
+    height: 4px;
+    margin: 5px 5px 5px 0px;
 }
 
 
@@ -94,7 +111,7 @@ body {
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu{
-    width: 220px;
+    width: 220px; /* 175 px desp */
     padding: 5px 0px 5px 5px;
     color: var(--color-background);
     background-color: var(--color-primario);   
@@ -110,6 +127,12 @@ padding-top: 10px;
 padding-left:10px;
 }
 
+.menu-group > h2::after {
+    background-color: var(--color-background);
+    height: 1px;
+    width: 200px;
+}
+
         /* botones del menu izquiedo */
         .menu-group > a {
             margin: 5px 0px 5px 5px;
@@ -123,6 +146,9 @@ padding-left:10px;
             border-radius: 4px 0px 0px 4px;
             transition: background-color 0.3s ease;
         }
+
+
+
 
         a > span {
             vertical-align: middle;
@@ -161,8 +187,8 @@ main section{
 
 
 .art-offer {
-    width: 530px; /* Ancho */
-    height: 550px; /* Alto modificar desp*/
+    width: 530px; /* Ancho 218 */
+    height: 550px; /* Alto modificar desp 413*/
     padding: 30px;
     text-align: center;
     display: flex;
@@ -237,8 +263,9 @@ main section{
 /* FOOTER */
 .main-footer{
 
-
-    background-color: violet;
+    width: 100%;
+    color: var(--color-background);
+    background-color: var(--color-terciario);
 }
 
 /* ESTILOS DE ...*/
@@ -259,4 +286,42 @@ main section{
     0% { transform: scale(1)}
     50% { transform: scale(1.6) rotate(-15deg)}
     100% { transform: scale(1) rotate(0deg)}
+  }
+  
+
+  /* propiedades responsive */
+
+  @media (max-width: 1000px) {
+    
+    .art-offer {
+        width: 218px; /* Ancho 218 */
+        height: 413px; /* Alto modificar desp 413*/
+    }
+    }
+  @media (max-width: 500px) {
+    main {
+        padding: 5px;
+        max-width: 300px;
+    }
+    .main-menu {
+        max-width: 190px;
+    }
+
+    .menu-group > h2::after {
+        background-color: var(--color-background);
+        height: 1px;
+        width: 150px;
+    }
+
+    .exclusive-offers {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .art-offer {
+        width: 300px; /* Ancho 218 */
+        height: 380px; /* Alto modificar desp 413*/
+        padding: 0px;
+        align-items: center;
+    }
   }
