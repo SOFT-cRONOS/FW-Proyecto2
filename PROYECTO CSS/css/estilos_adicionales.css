@@ -112,7 +112,9 @@ body {
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu{
-    width: 220px; /* 175 px desp */
+    flex-shrink: 1;
+    max-width: 220px; /* 175 px desp */
+    min-width: 170px;
     padding: 5px 0px 5px 5px;
     color: var(--color-background);
     background-color: var(--color-primario);   
@@ -164,11 +166,12 @@ padding-left:10px;
 
 
 main {
-    flex: 1;
+    flex:1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 30px;
+    min-width: 170px;
 }
 
 main section{
@@ -179,7 +182,9 @@ main section{
 /* ofertas */
 .exclusive-offers {
     display: grid;
+    grid-template-rows: auto 1fr; /*la primer fila al contenido, la segunda el resto*/
     gap: 15px; /*espacio entre columnas*/
+    padding-bottom: 20px;
 }
 .exclusive-offers>h2 {
     grid-column: 1 / span 3;
@@ -187,11 +192,12 @@ main section{
 
 
 .art-offer {
-    width: 530px; /* Ancho 218 */
-    height: 550px; /* Alto modificar desp 413*/
+    max-width: 530px; /* Ancho 218 */
+    max-height: 550px; /* Alto modificar desp 413*/
     padding: 30px;
     text-align: center;
     display: flex;
+    flex-shrink: 1;
     justify-content: space-between; /* columna iguala el alto */
     align-items: center;
     flex-direction: column;
@@ -299,17 +305,11 @@ main section{
 
   /* propiedades responsive */
 
-  @media (max-width: 1000px) {
-    
-    .art-offer {
-        width: 218px; /* Ancho 218 */
-        height: 413px; /* Alto modificar desp 413*/
-    }
-    }
-  @media (max-width: 500px) {
+  
+  @media (max-width: 900px) {
     main {
         padding: 5px;
-        max-width: 300px;
+        text-align: center;
     }
     .main-menu {
         max-width: 190px;
@@ -324,11 +324,13 @@ main section{
     .exclusive-offers {
         display: flex;
         flex-direction: column;
+        margin:auto;
     }
 
     .art-offer {
         width: 300px; /* Ancho 218 */
         height: 380px; /* Alto modificar desp 413*/
+       
         padding: 0px;
         align-items: center;
     }
