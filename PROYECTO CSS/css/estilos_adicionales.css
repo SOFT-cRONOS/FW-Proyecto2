@@ -28,7 +28,7 @@ h2, h3, a {
 
 h2 {
     font-size: 1.6rem;
-    font-weight: normal;
+    font-weight:normal;
 }
 
 h2::after {
@@ -76,6 +76,7 @@ body {
     flex-wrap:wrap;
     background-color: var(--color-background);
   }
+
 
 /* ESTILOS DE CABECERA PRINCIPAL*/
 .main-header{
@@ -187,6 +188,7 @@ main section{
     gap: 15px; /*espacio entre columnas*/
     padding-bottom: 20px;
 }
+
 .exclusive-offers>h2 {
     grid-column: 1 / span 3;
   }
